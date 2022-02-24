@@ -30,7 +30,7 @@ app.get("/api/whoami", async (req,res) => {
     language: req.headers["accept-language"],
     software: req.headers["user-agent"],
     ipaddress:req.headers["x-forwarded-for"],
-    yourISP: await axios.get('http://ip-api.com/json/67.190.193.112')
+    yourISP: await axios.get('http://ip-api.com/json/' + req.headers["x-forwarded-for"])
   .then((response) => response.data.isp),
     thelastvideoyouwatchedonpornhub: 'https://www.pornhub.com/view_video.php?viewkey=ph5d60751bac458&t=2&utm_medium=embed&utm_campaign=embed-title-html5 👀'
   })
